@@ -1,5 +1,23 @@
+/* Global style */
+* {
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    color:white;
+    padding: 2em;
+    /* #4B4EA2  #E14444 */
+    background-image: linear-gradient(to right, #4B4EA2, #E14444); 
+}
 
+h1, h2, h3, h4 {
+    font-family: 'Permanent Marker', cursive;
+}
+
+hr {
+    border: white solid 1px;
+}
 
 /* Cards style */
 
@@ -9,7 +27,6 @@
 
 .card {
     background-color: #363333;
-    color:white;
     border-radius: 30px;
     padding: 2em;
     margin: 1em;
@@ -24,10 +41,6 @@
     margin-right: auto;
     border-radius: 50%;
     border:none;
-}
-
-.card__h3 {
-    font-family: 'Permanent Marker', cursive;
 }
 
 .card__button {
