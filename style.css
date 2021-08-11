@@ -53,3 +53,65 @@ hr {
     padding-top: 0.25em;
     padding-bottom: 0.25em;
 }
+
+
+.editor{
+    display: flex;
+    align-self: center;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    background-color: #363333;
+    padding: 5rem;
+    width: 80vw; 
+    height: 70vh;
+    border-radius: 20px;
+}
+button{
+    width: 150px;
+    height: 40px;
+    margin: 2em 1em;
+    cursor: pointer;
+
+    border-radius: 10px;
+    
+}
+.editor-input{
+    background-color: #948f8f;
+    color: white;
+    border-radius: 15PX;
+    padding: 5px;
+    border: none;
+    margin: 5px;
+    width: 83vw;
+    
+}
+#editor-character-description{
+    height: 400px;
+}
+#editor-character-short{
+    height: 50px;
+}
+#editor-character-name{
+    height:70px;
+    font-size: 40px;
+}
+#save{
+    background-color: #4b7cfb;
+    border: none;
+    font-weight: 600;
+    font-style: italic;
+    color: white;
+
+
+}
+#delete{
+    background-color: #363333;
+    color: #bf3A30;
+    border-color: #bf3A30;
+    
+}
+#img-preview{
+    border-radius: 50%;
+    border-color: white;
+}
