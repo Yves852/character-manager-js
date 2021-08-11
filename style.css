@@ -1,0 +1,42 @@
+
+
+
+/* Cards style */
+
+.cardPool { 
+    display: flex;
+}
+
+.card {
+    background-color: #363333;
+    color:white;
+    border-radius: 30px;
+    padding: 2em;
+    margin: 1em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card__img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    border:none;
+}
+
+.card__h3 {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.card__button {
+    background-color: inherit;
+    border: solid white 1px;
+    color: inherit;
+    border-radius: 10px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+}
