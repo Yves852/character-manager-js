@@ -23,14 +23,20 @@ const displayCharacters = async () => {
     if(characters.length > 0){
         characters.forEach((character) => {
             let clone = template.content.cloneNode(true);
+            // Reduce description for pool to maximum 500 letters
+            let description = String(character.description);
+            if (description.length > 500) { 
+                description = description.slice(0, 500); 
+                description = description.concat("[...]");
+            }
             clone.querySelector(".card__h3").innerHTML = character.name;
-            clone.querySelector(".card__p").innerHTML = character.description;
+            clone.querySelector(".card__p").innerHTML = description;
             target.appendChild(clone);
         });
     }
 }
 
-(async () => {
+(() => {
     // On load, fill the pool section with cards from characters
     displayCharacters();
 })();
