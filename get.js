@@ -8,13 +8,29 @@ const getCharacter = async id => {
             headers: myHeaders
         });
         if(!result.ok){ throw new Error( `${result.status} ${result.statusText}`); }
-        return await result.json();
+        let characters = await result.json();
+        return  characters;
     }
     catch(error) {
         console.error(error);
     }
 }
+/* Function creating cards from template and filling with data */
+const displayCharacters = async () => {
+    const characters = await getCharacter();
+    const target = document.querySelector(".cardPool");
+    const template = document.getElementById("template");
+    if(characters.length > 0){
+        characters.forEach((character) => {
+            let clone = template.content.cloneNode(true);
+            clone.querySelector(".card__h3").innerHTML = character.name;
+            clone.querySelector(".card__p").innerHTML = character.description;
+            target.appendChild(clone);
+        });
+    }
+}
 
-(() => {
-    console.log(getCharacter());
+(async () => {
+    // On load, fill the pool section with cards from characters
+    displayCharacters();
 })();
