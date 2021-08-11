@@ -23,11 +23,15 @@ const displayCharacters = async () => {
     if(characters.length > 0){
         characters.forEach((character) => {
             let clone = template.content.cloneNode(true);
+            // TODO open character page
+            clone.querySelector(".card__button").addEventListener("click", async ()=>{
+                let char = await getCharacter(character.id);
+                console.log({name: char.name, descr: char.shortDescription});
             clone.querySelector(".card__h3").innerHTML = character.name;
             clone.querySelector(".card__p").innerHTML = character.shortDescription;
             target.appendChild(clone);
         });
-    }
+    }    
 }
 
 (() => {
