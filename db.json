@@ -1,29 +1,11 @@
 {
   "character": [
     {
-      "id": 1
-    },
-    {
-      "id": 2
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "description": "carré",
-      "shortdesc": "eponge",
-      "name": "bob",
+      "description": "xx",
+      "shortdesc": "xxf",
+      "name": "xxff",
       "image": "C:\\fakepath\\index.jpeg",
-      "id": 7
+      "id": 1
     }
   ]
 }

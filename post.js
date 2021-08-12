@@ -1,8 +1,26 @@
 const inputs = Array.from(document.querySelectorAll("input"));
+function previewFile() {
+    const preview = document.querySelector('img');
+    const file = document.querySelector('input[type=file]').files[0];
+    const reader = new FileReader();
+  
+    reader.addEventListener("load", function () {
+      // convert image file to base64 string
+      preview.src = reader.result;
+    }, false);
+  
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  }
+
+
+
 
 (() =>{
     document.getElementById('save').addEventListener('click', async() =>{
         const values = inputs.map(({value}) => value.trim())
+        
 
         if (values.some((value) => value === "")){
             console.log(`you must fill all the forms!`);

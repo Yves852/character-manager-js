@@ -115,3 +115,11 @@ button{
     border-radius: 50%;
     border-color: white;
 }
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.preview{
+    border: white;
+    border-radius: 50%;
+}
