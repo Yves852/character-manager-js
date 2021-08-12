@@ -29,6 +29,10 @@ hr {
     justify-content: space-between;
 }
 
+.cardCentering {
+    justify-content: center;
+}
+
 .card {
     background-color: #363333;
     border-radius: 30px;
