@@ -66,6 +66,19 @@ hr {
     padding-bottom: 0.25em;
 }
 
+.card__button--addnew {
+    background-color: #4B7CFB;
+    color: inherit;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: initial;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: x-large;
+}
+
 .card__p {
     height: 200px;
 }
