@@ -21,16 +21,16 @@ hr {
     border: white solid 1px;
 }
 
+.centerContent {
+    text-align: center;
+}
+
 /* Cards style */
 
 .cardPool { 
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-}
-
-.cardCentering {
-    justify-content: center;
 }
 
 .card {
@@ -82,6 +82,24 @@ hr {
     padding-right: 2em;
     font-size: x-large;
 }
+
+.card__button--update {
+    background-color: #4B7CFB;
+    color: inherit;
+    border: none;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.card__button--delete {
+    background-color: inherit;
+    border: solid #BF3A30 1px;
+    color:#BF3A30;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: medium;
+} 
 
 .card__p {
     height: 200px;

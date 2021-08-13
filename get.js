@@ -38,14 +38,29 @@ const displayCharacters = async () => {
         });
     }
     else {
+        // Create new buttons
+        let btnUpdate = document.createElement("button");
+        let btnDelete = document.createElement("button");
+        btnUpdate.innerText = "Upgrade character";
+        btnDelete.innerText = "Delete character";
+        btnUpdate.classList.add("card__button", "card__button--update");
+        btnDelete.classList.add("card__button", "card__button--delete");
+
+        // Create card from template
         let clone = template.content.cloneNode(true);
         clone.querySelector(".card__h3").innerHTML = characters.name;
         clone.querySelectorAll(".card__p")[0].innerHTML = characters.shortDescription;
         clone.querySelectorAll(".card__p")[1].innerHTML = characters.description;
         target.appendChild(clone);
+        target.classList.remove("cardPool");
+        target.children[1].classList.add("centerContent");
         target.children[1].classList.remove("card--pool");
-        target.children[1].parentElement.classList.remove("cardPool");
+        // Remove Add character button, add update and delete buttons
+        let btnSee = target.getElementsByClassName("card__button")[0];
         document.body.removeChild(document.getElementsByClassName("card__button--addnew")[0]);
+        target.children[1].appendChild(btnUpdate);
+        target.children[1].appendChild(btnDelete);
+        target.children[1].removeChild(btnSee);
     }
 }
 
