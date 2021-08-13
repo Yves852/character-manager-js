@@ -1,116 +1,99 @@
 /* Global style */
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
 body {
-    color:white;
-    padding: 2em;
-    padding-left: 4em;
-    padding-right: 4em;
-    /* #4B4EA2  #E14444 */
-    background-image: linear-gradient(to right, #4B4EA2, #E14444); 
+  color:white;
+  padding: 2em;
+  padding-left: 4em;
+  padding-right: 4em;
+  /* #4B4EA2  #E14444 */
+  background-image: linear-gradient(to right, #4B4EA2, #E14444); 
 }
-
 h1, h2, h3, h4 {
-    font-family: 'Permanent Marker', cursive;
+  font-family: 'Permanent Marker', cursive;
 }
-
 hr {
-    border: white solid 1px;
+  border: white solid 1px;
 }
-
 .centerContent {
-    text-align: center;
+  text-align: center;
+}
+.btn {
+  color: inherit;
+  background-color: #4B7CFB;
 }
 
 /* Cards style */
-
 .cardPool { 
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
-
 .card {
-    background-color: #363333;
-    border-radius: 30px;
-    padding: 2em;
-    margin-top: 2em;
-    font-family: 'Roboto', sans-serif;
+  background-color: #363333;
+  border-radius: 30px;
+  padding: 2em;
+  margin-top: 2em;
+  font-family: 'Roboto', sans-serif;
 }
-
 .card * {
-    padding-bottom: 1em;
+  padding-bottom: 1em;
 }
-
 .card--pool {
-    width: 250px;
+  width: 250px;
 }
-
 .card--alone {
-    padding: 4em;
+  padding: 4em;
 }
-
 .card__img {
-    width: 100px;
-    height: 100px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
-    border:none;
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  border:none;
 }
-
 .card__button {
-    background-color: inherit;
-    border: solid white 1px;
-    color: inherit;
-    border-radius: 10px;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
+  background-color: inherit;
+  border: solid white 1px;
+  border-radius: 10px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
 }
-
 .card__button--addnew {
-    background-color: #4B7CFB;
-    color: inherit;
-    border: none;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: initial;
-    padding-left: 2em;
-    padding-right: 2em;
-    font-size: x-large;
+  border: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: initial;
+  padding-left: 2em;
+  padding-right: 2em;
+  font-size: x-large;
 }
-
 .card__button--update {
-    background-color: #4B7CFB;
-    color: inherit;
-    border: none;
-    font-style: oblique;
-    font-weight: bold;
-    font-size: medium;
+  border: none;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: medium;
 }
-
 .card__button--delete {
-    background-color: inherit;
-    border: solid #BF3A30 1px;
-    color:#BF3A30;
-    font-style: oblique;
-    font-weight: bold;
-    font-size: medium;
+  background-color: inherit;
+  border: solid #BF3A30 1px;
+  color:#BF3A30;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: medium;
 } 
-
 .card__p {
-    height: 200px;
+  height: 200px;
 }
 
 /* Editor style */
-
 .editor{
     display: flex;
     align-self: center;
@@ -128,8 +111,6 @@ hr {
     height: 40px;
     margin: 2em 1em;
     cursor: pointer;
-    background-color: #4B7CFB;
-    color: inherit;
     border: none;
     border-radius: 10px;    
     font-style: oblique;
@@ -157,13 +138,10 @@ hr {
     font-size: 40px;
 }
 #save{
-    background-color: #4b7cfb;
     border: none;
     font-weight: 600;
     font-style: italic;
     color: white;
-
-
 }
 #delete{
     background-color: #363333;
