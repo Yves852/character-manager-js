@@ -28,8 +28,7 @@ const displayCharacters = async () => {
     if( characters[0] != undefined && characters.length > 0){
         characters.forEach((character) => {
             let clone = template.content.cloneNode(true);
-            clone.querySelector(".card__button").addEventListener("click", async ()=>{
-                let char = await getCharacter(character.id);
+            clone.querySelector(".card__button").addEventListener("click", ()=>{
                 window.open(`index.html?id=${character.id}`, '_blank');
             });
             clone.querySelector(".card__h3").innerHTML = character.name;
