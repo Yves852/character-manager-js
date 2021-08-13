@@ -67,7 +67,7 @@ hr {
     height: 70vh;
     border-radius: 20px;
 }
-button{
+.edit-btn{
     width: 150px;
     height: 40px;
     margin: 2em 1em;
