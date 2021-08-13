@@ -4,7 +4,7 @@ const inputs = Array.from(document.querySelectorAll("input"));
 
 const preparePut = async id => {
     // Refresh data from the character and fill inputs with its data
-    const result = await fetch(`http://localhost:3000/character${id}`,{ method: "POST" });
+    const result = await fetch(`http://localhost:3000/characters/${id}`,{ method: "GET" });
     const character = await result.json();
     inputs.forEach(input => {
         switch(input.id){
@@ -29,7 +29,7 @@ const preparePut = async id => {
             return;
         }
         const [image,name,shortdesc,description] = values;
-        const response = await fetch(`http://localhost:3000/character${id}`,{
+        const response = await fetch(`http://localhost:3000/characters/${id}`,{
             method: "PUT",
             headers:{
                 "Content-Type":"application/json",
