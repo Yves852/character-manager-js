@@ -14,16 +14,20 @@
 
 <section class="editor">
 
-        <img src="" alt="Preview" id="img-preview">
-        <input type="file" id="image-uploader" accept=".jpeg, .png, .jpg"/>
+    <form class="form">
+
+        <img src="" height="200" alt="preview" class="preview">
+        <input type="file" onchange="previewFile()"><br>
+
+    
+    </form>
         <input type="text" class="editor-input" id="editor-character-name" placeholder="Cherry blossm">
         <input type="text" class="editor-input" id="editor-character-short" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit.">
         <input type="text" class="editor-input" id="editor-character-description" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe laboriosam aliquam veritatis veniam velit eos sequi omnis iusto quis distinctio.">
         <div> 
-            <button id="save">Save changes</button>
-            <button id="delete">Delete character</button>
+            <button class="edit-btn" id="save">Save changes</button>
+            <button class="edit-btn" id="delete">Delete character</button>
         </div>
-        </form>
 
 
 
