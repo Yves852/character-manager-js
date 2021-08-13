@@ -49,6 +49,10 @@ hr {
     width: 250px;
 }
 
+.card--alone {
+    padding: 4em;
+}
+
 .card__img {
     width: 100px;
     height: 100px;

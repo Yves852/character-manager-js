@@ -38,6 +38,20 @@ const displayCharacters = async () => {
         });
     }
     else {
+        // Create card from template
+        let clone = template.content.cloneNode(true);
+        console.log(clone);
+        clone.children[0].appendChild(document.createElement("p")); 
+        clone.querySelectorAll("p")[1].classList.add("card__p");
+        clone.querySelector(".card__h3").innerHTML = characters.name;
+        clone.querySelectorAll(".card__p")[0].innerHTML = characters.shortDescription;
+        clone.querySelectorAll(".card__p")[1].innerHTML = characters.description;
+
+        // Switch class for one card render
+        clone.children[0].classList.remove("card--pool");
+        clone.children[0].classList.add("card--alone");
+        clone.children[0].classList.add("centerContent");
+
         // Create new buttons
         let btnUpdate = document.createElement("button");
         let btnDelete = document.createElement("button");
@@ -46,21 +60,16 @@ const displayCharacters = async () => {
         btnUpdate.classList.add("card__button", "card__button--update");
         btnDelete.classList.add("card__button", "card__button--delete");
 
-        // Create card from template
-        let clone = template.content.cloneNode(true);
-        clone.querySelector(".card__h3").innerHTML = characters.name;
-        clone.querySelectorAll(".card__p")[0].innerHTML = characters.shortDescription;
-        clone.querySelectorAll(".card__p")[1].innerHTML = characters.description;
+        // Remove Add character button, add update and delete buttons
+        document.body.removeChild(document.getElementsByClassName("card__button--addnew")[0]);
+        let btnSee = clone.children[0].getElementsByClassName("card__button")[0];
+        clone.children[0].appendChild(btnUpdate);
+        clone.children[0].appendChild(btnDelete);
+        clone.children[0].removeChild(btnSee);
+
+        // Add to target
         target.appendChild(clone);
         target.classList.remove("cardPool");
-        target.children[1].classList.add("centerContent");
-        target.children[1].classList.remove("card--pool");
-        // Remove Add character button, add update and delete buttons
-        let btnSee = target.getElementsByClassName("card__button")[0];
-        document.body.removeChild(document.getElementsByClassName("card__button--addnew")[0]);
-        target.children[1].appendChild(btnUpdate);
-        target.children[1].appendChild(btnDelete);
-        target.children[1].removeChild(btnSee);
     }
 }
 
