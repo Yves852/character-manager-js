@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Yves852/character-manager-js/issues"
   },
-  "homepage": "https://github.com/Yves852/character-manager-js#readme"
+  "homepage": "https://github.com/Yves852/character-manager-js#readme",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
 }
