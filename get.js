@@ -57,6 +57,15 @@ const displayCharacters = async () => {
         let btnDelete = document.createElement("button");
         btnUpdate.innerText = "Upgrade character";
         btnDelete.innerText = "Delete character";
+
+        // Add click events, update open new tab and delete handle deletion
+        btnUpdate.addEventListener("click", ()=>{
+
+        });
+        btnDelete.addEventListener("click", ()=>{
+
+        });
+
         // TODO apply sass updates when style.css is updated
         btnUpdate.classList.add("card__button", "edit-btn");
         btnDelete.classList.add("card__button", "edit-btn");
