@@ -66,8 +66,8 @@ const displayCharacters = async () => {
         });
 
         // TODO apply sass updates when style.css is updated
-        btnUpdate.classList.add("card__button", "edit-btn");
-        btnDelete.classList.add("card__button", "edit-btn");
+        btnUpdate.classList.add("btn", "edit-btn");
+        btnDelete.classList.add("btn", "edit-btn");
         btnDelete.id = "delete";
 
         // Remove Add character button, add update and delete buttons
