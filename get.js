@@ -57,8 +57,10 @@ const displayCharacters = async () => {
         let btnDelete = document.createElement("button");
         btnUpdate.innerText = "Upgrade character";
         btnDelete.innerText = "Delete character";
-        btnUpdate.classList.add("card__button", "card__button--update");
-        btnDelete.classList.add("card__button", "card__button--delete");
+        // TODO apply sass updates when style.css is updated
+        btnUpdate.classList.add("card__button", "edit-btn");
+        btnDelete.classList.add("card__button", "edit-btn");
+        btnDelete.id = "delete";
 
         // Remove Add character button, add update and delete buttons
         document.body.removeChild(document.getElementsByClassName("card__button--addnew")[0]);

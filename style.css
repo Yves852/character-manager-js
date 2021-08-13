@@ -124,13 +124,17 @@ hr {
     border-radius: 20px;
 }
 .edit-btn{
-    width: 150px;
+    width: 200px;
     height: 40px;
     margin: 2em 1em;
     cursor: pointer;
-
-    border-radius: 10px;
-    
+    background-color: #4B7CFB;
+    color: inherit;
+    border: none;
+    border-radius: 10px;    
+    font-style: oblique;
+    font-weight: bold;
+    font-size: medium;
 }
 .editor-input{
     background-color: #948f8f;
@@ -164,8 +168,7 @@ hr {
 #delete{
     background-color: #363333;
     color: #bf3A30;
-    border-color: #bf3A30;
-    
+    border: solid 1px #bf3A30;    
 }
 #img-preview{
     border-radius: 50%;
