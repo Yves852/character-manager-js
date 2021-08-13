@@ -18,8 +18,8 @@ const getCharacter = async id => {
 /* Function creating cards from template and filling with data */
 const displayCharacters = async () => {
     // Check if an id is sent in url and use it on getCharacter
-    const searchParams = new URLSearchParams(document.URL);
-    const idUrl = searchParams.get("file:///home/yves/Documents/Travail/Becode - webdev/Projects/character-manager-js/index.html?id");
+    const params = new URLSearchParams(window.location.search);
+    const idUrl = params.get("id");
     const characters = idUrl ? await getCharacter(idUrl) : await getCharacter();
     const target = document.querySelector(".cardPool");
     const template = document.getElementById("template");
@@ -29,6 +29,7 @@ const displayCharacters = async () => {
         characters.forEach((character) => {
             let clone = template.content.cloneNode(true);
             clone.querySelector(".card__button").addEventListener("click", ()=>{
+                // Open a new tab of index.html with the character id as parameter
                 window.open(`index.html?id=${character.id}`, '_blank');
             });
             clone.querySelector(".card__h3").innerHTML = character.name;
@@ -39,7 +40,6 @@ const displayCharacters = async () => {
     else {
         // Create card from template
         let clone = template.content.cloneNode(true);
-        console.log(clone);
         clone.children[0].appendChild(document.createElement("p")); 
         clone.querySelectorAll("p")[1].classList.add("card__p");
         clone.querySelector(".card__h3").innerHTML = characters.name;
