@@ -6,6 +6,6 @@
                 "Content-Type":"application/json",
                 
             }})
-            window.open('http://127.0.0.1:5500/index.html', '_self')
+            window.open('index.html', '_self')
             }else return 
         }
