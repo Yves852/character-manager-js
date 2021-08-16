@@ -1,8 +1,12 @@
-const inputs = Array.from(document.querySelectorAll("input"));
+
 
 // When called from Update character, fill data from selected character and http method is PUT
 
 const preparePut = async id => {
+    const inputs = Array.from(document.querySelectorAll("input"));
+
+    if(id == "undefined") { throw new Error(`Cannot get id`); }
+
     // Refresh data from the character and fill inputs with its data
     const result = await fetch(`http://localhost:3000/characters/${id}`,{ method: "GET" });
     const character = await result.json();

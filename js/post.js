@@ -19,8 +19,8 @@ function previewFile() {
     }
   }
 
-
-document.getElementById('save').addEventListener('click', async() =>{
+const preparePost = ()=>{
+  document.getElementById('save').addEventListener('click', async() =>{
     const inputs = Array.from(document.querySelectorAll(".editor-input"));        
     const values = inputs.map(({value}) => value.trim())
     if (values.some((value) => value === "")){
@@ -28,18 +28,19 @@ document.getElementById('save').addEventListener('click', async() =>{
         return;
     }
     const [image,name,shortdesc,description] =values;
-    const response = await fetch('http://localhost:3000/character',{
+    const response = await fetch('http://localhost:3000/characters',{
         method: "POST",
         headers:{
             "Content-Type":"application/json",
         },
         body: JSON.stringify({
             description,
-            shortdesc,
+            shortDescription,
             name,
             image,
         })
     });
-    const newcharacter = await response.json
+    const newcharacter = await response.json();
     console.log(newcharacter);
-});
+  });
+}
