@@ -8,8 +8,7 @@ const preparePut = async id => {
     if(id == "undefined") { throw new Error(`Cannot get id`); }
 
     // Refresh data from the character and fill inputs with its data
-    const result = await fetch(`https://character-database.becode.xyz/characters/${id}`,{ method: "GET" });
-    const character = await result.json();
+    const character = await getCharacter(id, null);
     inputs.forEach(input => {
         switch(input.id){
             case "editor-character-name":
@@ -45,7 +44,6 @@ const preparePut = async id => {
                 "image": "", // TODO
             })
         });
-        const newcharacter = await fetch(`https://character-database.becode.xyz/characters/${id}`,{ method: "GET" });
         window.open(`../index.html?id=${id}`, '_self');
     });
 }

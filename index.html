@@ -19,16 +19,17 @@
     <header>
         <h1>Character manager</h1>
         <hr>
+        <input type="search" name="search-bar" id="search-bar" placeholder="Search name with at least 3 letters">
     </header>
-    <section class="cardPool">
-        <template id="template">
-            <article class="card card--pool">
-                <img class="card__img" src="" alt="">
-                <h3 class="card__h3"></h3>
-                <p class="card__p"></p>
-                <button class="btn card__button">See character</button>
-            </article>
-        </template>
+    <template id="template">
+        <article class="card card--pool">
+            <img class="card__img" src="" alt="">
+            <h3 class="card__h3"></h3>
+            <p class="card__p"></p>
+            <button class="btn card__button">See character</button>
+        </article>
+    </template>
+    <section class="cardPool" id="pool">
     </section>
     <button class="btn card__button--addnew">Add a new character to the collection</button>
     <script src="./js/delete.js"></script>
