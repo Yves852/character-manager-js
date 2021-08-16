@@ -1,3 +1,8 @@
+// Semaphore to control access to checkBarGet()
+let researchRequestSemaphore = true;
+// Handle search bar actions
+const searchBar = document.getElementById("search-bar");
+
 /* Function creating cards from template and filling with data */
 const displayCharacters = async name => {
   // Check if an id is sent in url or a name by paramerer and use it on getCharacter
@@ -79,19 +84,26 @@ const displayCharacters = async name => {
       target.classList.remove("cardPool");
   }
 }
+// When triggered, check if the searched string is > 2 of empty to make a get request
+const checkBarGet = ()=>{
+  if(searchBar.value.length > 2) { displayCharacters(searchBar.value); }
+  else if(searchBar.value.length == 0) { displayCharacters(); }
+}
 
 (() => {
   // On load, fill the pool section with cards from characters
   displayCharacters();
 
-  // Handle search bar actions
-  const searchBar = document.getElementById("search-bar");
   // Empty bar at load
   searchBar.value = "";
-  // When release key on the search bar, check if text is > 2 then launch research on name filter
-  // Or is empty then refresh list of characters
+  // When release key on the search bar, make a research if none already launch within 500 ms
+  // researchRequestSemaphore control the access to the function, so it cannot be triggered more than 
+  // one time every 500 ms and prevent API to die of requests
   searchBar.addEventListener("keyup", async ()=>{
-    if(searchBar.value.length > 2) { displayCharacters(searchBar.value); }
-    else if(searchBar.value.length == 0) { displayCharacters(); }
+    if(researchRequestSemaphore) {
+      researchRequestSemaphore = false;      
+      setTimeout(checkBarGet, 500);
+      researchRequestSemaphore = true;
+    }
   });
 })();
