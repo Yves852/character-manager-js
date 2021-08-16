@@ -11,7 +11,7 @@ const displayCharacters = async name => {
       : await getCharacter(null, null);
   const target = document.querySelector("#pool");
   const template = document.getElementById("template");
-
+  
   // Check if target have already elements, empty it if so
   if(target.children && target.children.length > 0) { 
     while(target.lastChild) { target.removeChild(target.lastChild); }; 
@@ -20,18 +20,19 @@ const displayCharacters = async name => {
   // If receive an array of multiple characters, loop on it and display and prepare button
   // Else display the unique character card with adapted style
   if( characters[0] != undefined && characters.length > 0){
-      characters.forEach((character) => {
-          let clone = template.content.cloneNode(true);
-          clone.querySelector(".card__button").addEventListener("click", ()=>{
-              // Open a new tab of index.html with the character id as parameter
-              window.open(`index.html?id=${character.id}`, '_blank');
-          });
-          clone.querySelector(".card__h3").innerHTML = character.name;
-          clone.querySelector(".card__p").innerHTML = character.shortDescription;
-          target.appendChild(clone);
+    if(!target.classList.contains("cardPool")) { target.classList.add("cardPool"); }
+    characters.forEach((character) => {
+      let clone = template.content.cloneNode(true);
+      clone.querySelector(".card__button").addEventListener("click", ()=>{
+        // Open a new tab of index.html with the character id as parameter
+        window.open(`index.html?id=${character.id}`, '_blank');
       });
+      clone.querySelector(".card__h3").innerHTML = character.name;
+      clone.querySelector(".card__p").innerHTML = character.shortDescription;
+      target.appendChild(clone);
+    });
   }
-  else {
+  else if(characters.id) {
       // Create card from template
       let clone = template.content.cloneNode(true);
       clone.children[0].appendChild(document.createElement("p")); 
@@ -66,11 +67,12 @@ const displayCharacters = async name => {
       btnDelete.id = "delete";
 
       // Remove Add character button, add update and delete buttons
-      document.body.removeChild(document.getElementsByClassName("card__button--addnew")[0]);
+      if(document.getElementsByClassName("card__button--addnew")[0]) 
+        { document.body.removeChild(document.getElementsByClassName("card__button--addnew")[0]); }
       let btnSee = clone.children[0].getElementsByClassName("card__button")[0];
       clone.children[0].appendChild(btnUpdate);
       clone.children[0].appendChild(btnDelete);
-      clone.children[0].removeChild(btnSee);
+      if(btnSee) { clone.children[0].removeChild(btnSee); }
 
       // Add to target
       target.appendChild(clone);
@@ -81,7 +83,7 @@ const displayCharacters = async name => {
 (() => {
   // On load, fill the pool section with cards from characters
   displayCharacters();
-  
+
   // Handle search bar actions
   const searchBar = document.getElementById("search-bar");
   // Empty bar at load

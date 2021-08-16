@@ -8,8 +8,7 @@ const preparePut = async id => {
     if(id == "undefined") { throw new Error(`Cannot get id`); }
 
     // Refresh data from the character and fill inputs with its data
-    const result = getCharacter(id, null);
-    const character = await result.json();
+    const character = await getCharacter(id, null);
     inputs.forEach(input => {
         switch(input.id){
             case "editor-character-name":
