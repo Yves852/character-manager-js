@@ -36,7 +36,7 @@ const preparePut = async id => {
             },
             body: JSON.stringify({
                 description,
-                shortdesc,
+                shortDescription,
                 name,
                 image,
             })
