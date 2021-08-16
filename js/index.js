@@ -45,9 +45,7 @@ const displayCharacters = async () => {
         // replace actual page with edit.html
         window.open(`./html/edit.html?id=${characters.id}`, '_self');
       });
-      btnDelete.addEventListener("click", ()=>{
-
-      });
+      btnDelete.addEventListener("click",del)
 
       // TODO apply sass updates when style.css is updated
       btnUpdate.classList.add("btn", "edit-btn");
