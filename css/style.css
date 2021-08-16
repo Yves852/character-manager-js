@@ -110,7 +110,7 @@ hr {
     
 }
 #editor-character-description{
-    height: 400px;
+    height: 150px;
 }
 #editor-character-short{
     height: 50px;
@@ -141,4 +141,13 @@ hr {
 .preview{
     border: white;
     border-radius: 50%;
+}
+.input-div{
+  position: relative;
+}
+
+#name-count,#desc-count,#short-count {
+  position: absolute;
+  right: 20px;
+  bottom: 20%;
 }
