@@ -1,11 +1,22 @@
 /* Function creating cards from template and filling with data */
-const displayCharacters = async () => {
-  // Check if an id is sent in url and use it on getCharacter
+const displayCharacters = async name => {
+  // Check if an id is sent in url or a name by paramerer and use it on getCharacter
   const params = new URLSearchParams(window.location.search);
   const idUrl = params.get("id");
-  const characters = idUrl ? await getCharacter(idUrl) : await getCharacter();
-  const target = document.querySelector(".cardPool");
+  let nameParam = name ? name : "";
+  const characters = idUrl 
+    ? await getCharacter(idUrl, null) 
+    : nameParam.length > 0 
+      ? await getCharacter(null, nameParam) 
+      : await getCharacter(null, null);
+  const target = document.querySelector("#pool");
   const template = document.getElementById("template");
+
+  // Check if target have already elements, empty it if so
+  if(target.children && target.children.length > 0) { 
+    while(target.lastChild) { target.removeChild(target.lastChild); }; 
+  }
+
   // If receive an array of multiple characters, loop on it and display and prepare button
   // Else display the unique character card with adapted style
   if( characters[0] != undefined && characters.length > 0){
@@ -70,4 +81,15 @@ const displayCharacters = async () => {
 (() => {
   // On load, fill the pool section with cards from characters
   displayCharacters();
+  
+  // Handle search bar actions
+  const searchBar = document.getElementById("search-bar");
+  // Empty bar at load
+  searchBar.value = "";
+  // When release key on the search bar, check if text is > 2 then launch research on name filter
+  // Or is empty then refresh list of characters
+  searchBar.addEventListener("keyup", async ()=>{
+    if(searchBar.value.length > 2) { displayCharacters(searchBar.value); }
+    else if(searchBar.value.length == 0) { displayCharacters(); }
+  });
 })();

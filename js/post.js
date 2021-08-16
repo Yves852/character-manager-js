@@ -27,7 +27,7 @@ const preparePost = ()=>{
         console.log(`you must fill all the forms!`);
         return;
     }
-    const [image,name,shortdesc,description] =values;
+    const [image,name,shortDescription,description] =values;
     const response = await fetch('https://character-database.becode.xyz/characters/',{
         method: "POST",
         headers:{
