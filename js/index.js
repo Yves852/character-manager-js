@@ -43,7 +43,7 @@ const displayCharacters = async () => {
       // Add click events, update open new tab and delete handle deletion
       btnUpdate.addEventListener("click", ()=>{
         // replace actual page with edit.html
-        window.open(`edit.html?id=${character.id}`, '_self');
+        window.open(`./html/edit.html?id=${characters.id}`, '_self');
       });
       btnDelete.addEventListener("click", ()=>{
 

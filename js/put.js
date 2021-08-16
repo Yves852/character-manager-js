@@ -8,7 +8,7 @@ const preparePut = async id => {
     if(id == "undefined") { throw new Error(`Cannot get id`); }
 
     // Refresh data from the character and fill inputs with its data
-    const result = await fetch(`http://localhost:3000/characters/${id}`,{ method: "GET" });
+    const result = await fetch(`https://character-database.becode.xyz/characters/${id}`,{ method: "GET" });
     const character = await result.json();
     inputs.forEach(input => {
         switch(input.id){
@@ -32,8 +32,8 @@ const preparePut = async id => {
             console.log(`you must fill all the forms!`);
             return;
         }
-        const [image,name,shortdesc,description] = values;
-        const response = await fetch(`http://localhost:3000/characters/${id}`,{
+        const [image,name,shortDescription,description] = values;
+        const response = await fetch(`https://character-database.becode.xyz/characters/${id}`,{
             method: "PUT",
             headers:{
                 "Content-Type":"application/json",
@@ -42,10 +42,10 @@ const preparePut = async id => {
                 description,
                 shortDescription,
                 name,
-                image,
+                "image": "", // TODO
             })
         });
-        const newcharacter = await response.json();
-        console.log(newcharacter);
+        const newcharacter = await fetch(`https://character-database.becode.xyz/characters/${id}`,{ method: "GET" });
+        window.open(`../index.html?id=${id}`, '_self');
     });
 }

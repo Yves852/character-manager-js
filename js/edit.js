@@ -9,7 +9,7 @@ let idUrl;
   // If an id is retrieved, use put to update character
   // Else post to create a new character
   if(idUrl){
-    preparePut();   // post.js
+    preparePut(idUrl);   // post.js
   }
   else {
     preparePost();  // put.js

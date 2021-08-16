@@ -28,7 +28,7 @@ const preparePost = ()=>{
         return;
     }
     const [image,name,shortdesc,description] =values;
-    const response = await fetch('http://localhost:3000/characters',{
+    const response = await fetch('https://character-database.becode.xyz/characters/',{
         method: "POST",
         headers:{
             "Content-Type":"application/json",
