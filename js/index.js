@@ -32,6 +32,7 @@ const displayCharacters = async name => {
         // Open a new tab of index.html with the character id as parameter
         window.open(`index.html?id=${character.id}`, '_blank');
       });
+      clone.querySelector(".card__img").src = `data:image/png;base64,${character.image}`;
       clone.querySelector(".card__h3").innerHTML = character.name;
       clone.querySelector(".card__p").innerHTML = character.shortDescription;
       target.appendChild(clone);
@@ -42,6 +43,7 @@ const displayCharacters = async name => {
       let clone = template.content.cloneNode(true);
       clone.children[0].appendChild(document.createElement("p")); 
       clone.querySelectorAll("p")[1].classList.add("card__p");
+      clone.querySelector(".card__img").src = `data:image/png;base64,${characters.image}`;
       clone.querySelector(".card__h3").innerHTML = characters.name;
       clone.querySelectorAll(".card__p")[0].innerHTML = characters.shortDescription;
       clone.querySelectorAll(".card__p")[1].innerHTML = characters.description;
@@ -108,5 +110,5 @@ const checkBarGet = ()=>{
 })();
 
 document.getElementById('addBtn').addEventListener("click", () => {
-  window.open('../html/edit.html', "_self")
+  window.open('./html/edit.html', "_self")
 })

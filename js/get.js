@@ -13,10 +13,10 @@ const getCharacter = async (id, name) => {
   }
 
   try {
-    const myHeaders = new Headers();
+    //const myHeaders = new Headers();
     let result = await window.fetch(`https://character-database.becode.xyz/characters/${param}`, { 
       method: "GET",
-      headers: myHeaders
+      //headers: myHeaders
     });
     if(!result.ok){ throw new Error( `${result.status} ${result.statusText}`); }
     let characters = await result.json();
