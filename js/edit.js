@@ -1,3 +1,25 @@
+let characterInput;
+
+// Retrieve inut with image and transform it to an base 64 url
+const imgFileToBase64 = function (e) {    
+  const preview = document.querySelector('.preview');
+  const input = e.target;
+  //const file = document.querySelector('#editor-character-name');
+  const reader = new FileReader();
+  let imgUrl64 = "";
+
+  reader.addEventListener("load", function () {
+    // convert image file to base64 string
+    imgUrl64 = reader.result;    
+    preview.src = imgUrl64;
+    // Add into character
+    characterInput.image = imgUrl64.slice(21, imgUrl64.length);
+  });
+
+  if (input.files[0]) {
+    reader.readAsDataURL(input.files[0]);     
+  }
+}
 
 const getDataInputs = inputs => {
   let data = {};
