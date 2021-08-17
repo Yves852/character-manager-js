@@ -1,4 +1,11 @@
+
+
+
 let base64 = "";
+
+document.getElementById('uploadImage').addEventListener('click', ()=>{
+  document.querySelector("input[type=file").click()
+})
 function previewFile() {
   const preview = document.querySelector("img");
   const file = document.querySelector("input[type=file]").files[0];
@@ -85,7 +92,7 @@ document.getElementById("save").addEventListener("click", async () => {
     alert("you must fill all the forms!");
     return;
   }
-  if ((countChecker = true)) {
+  if ((countChecker === true)) {
     alert("veuillez ne pas dépasser le nombre de caractères autorisés");
     return;
   }
@@ -111,7 +118,7 @@ document.getElementById("save").addEventListener("click", async () => {
   console.log(newcharacter);
 
   alert(
-    "Votre Personnage a bien été enrgistré, vous allez être dirigé vers la page d'accueil"
+    "Votre Personnage a bien été enregistré, vous allez être dirigé vers la page d'accueil"
   );
-  window.open("index.html", "_self");
+  window.open("../index.html", "_self");
 });

@@ -12,11 +12,15 @@
       <h1 class="character-manager">Character manager</h1>
     </header>
     <section class="editor">
-      <form class="form">
+      <div id="uploadImage">
+        <div id="preview"><p>preview</p></div>
+        <p>Upload Image</p>
+      </div>
+      <form class="form" id="imageInput">
         <img src="" height="200" alt="preview" class="preview" />
         <input type="file" onchange="previewFile()" /><br />
       </form>
-      <div  class="input-div">
+      <div class="input-div">
         <input
           type="text"
           class="editor-input"
@@ -35,7 +39,12 @@
         <p id="short-count">0 on max 70 char.</p>
       </div>
       <div class="input-div">
-        <input type="text" class="editor-input" id="editor-character-description" placeholder="Descritpion" />
+        <input
+          type="text"
+          class="editor-input"
+          id="editor-character-description"
+          placeholder="Descritpion"
+        />
         <p id="desc-count">0 on max 350 char.</p>
       </div>
       <div>
