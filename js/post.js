@@ -1,7 +1,7 @@
+
+
+
 let base64 = "";
-
-
-
 
 document.getElementById('uploadImage').addEventListener('click', ()=>{
   document.querySelector("input[type=file").click()
@@ -118,7 +118,7 @@ document.getElementById("save").addEventListener("click", async () => {
   console.log(newcharacter);
 
   alert(
-    "Votre Personnage a bien été enrgistré, vous allez être dirigé vers la page d'accueil"
+    "Votre Personnage a bien été enregistré, vous allez être dirigé vers la page d'accueil"
   );
-  window.open("./index.html", "_self");
+  window.open("../index.html", "_self");
 });
