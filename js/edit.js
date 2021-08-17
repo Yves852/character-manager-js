@@ -13,7 +13,7 @@ const imgFileToBase64 = function (e) {
     imgUrl64 = reader.result;    
     preview.src = imgUrl64;
     // Add into character
-    characterInput.image = imgUrl64.slice(21, imgUrl64.length);
+    characterInput.image = imgUrl64.split(",")[1]; //.slice(21, imgUrl64.length);
   });
 
   if (input.files[0]) {

@@ -51,8 +51,7 @@ const preparePut = async id => {
     }
     // imgFileToBase64(); // Prepare event to get url image from file when input file trigger
     document.getElementById('save').addEventListener('click', async () => {
-        let dataCharacter = { ...characterInput, ...await getCharacter(id, null) };
-        alert(JSON.stringify(dataCharacter));
+        let dataCharacter = { ...characterInput, ...getDataInputs(inputs) };
         const response = await fetch(`https://character-database.becode.xyz/characters/${id}`,{
             method: "PUT",
             headers:{
