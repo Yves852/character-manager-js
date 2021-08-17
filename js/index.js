@@ -45,8 +45,8 @@ const displayCharacters = async () => {
         // replace actual page with edit.html
         window.open(`./html/edit.html?id=${characters.id}`, '_self');
       });
-      btnDelete.addEventListener("click",del)
-
+      btnDelete.addEventListener("click", () => {
+        del(characters.id)})
       // TODO apply sass updates when style.css is updated
       btnUpdate.classList.add("btn", "edit-btn");
       btnDelete.classList.add("btn", "edit-btn");
@@ -65,7 +65,11 @@ const displayCharacters = async () => {
   }
 }
 
+
 (() => {
   // On load, fill the pool section with cards from characters
   displayCharacters();
 })();
+document.getElementById('addBtn').addEventListener("click", () => {
+  window.open('../html/edit.html', "_self")
+})
