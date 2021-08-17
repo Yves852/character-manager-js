@@ -48,17 +48,22 @@ const preparePut = async id => {
             break;
         }
       });
-    }
+    }// const values = inputvalues.unshift(base64);
     // imgFileToBase64(); // Prepare event to get url image from file when input file trigger
     document.getElementById('save').addEventListener('click', async () => {
-        let dataCharacter = { ...characterInput, ...getDataInputs(inputs) };
-        const response = await fetch(`https://character-database.becode.xyz/characters/${id}`,{
-            method: "PUT",
-            headers:{
-                "Content-Type":"application/json",
-            },
-            body: JSON.stringify(dataCharacter)
-        });
-        window.open(`../index.html?id=${id}`, '_self');
+        let dataCharacter = { "image": base64, ...getDataInputs(inputs) };
+        try {
+          const response = await fetch(`https://character-database.becode.xyz/characters/${id}`,{
+              method: "PUT",
+              headers:{
+                  "Content-Type":"application/json",
+              },
+              body: JSON.stringify(dataCharacter)
+          });
+          window.open(`../index.html?id=${id}`, '_self');
+        }
+        catch(error) {
+          console.error(error);
+        }
     });
 }

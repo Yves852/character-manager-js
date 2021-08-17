@@ -1,4 +1,5 @@
 let characterInput;
+let base64 = "";
 
 // Retrieve inut with image and transform it to an base 64 url
 const imgFileToBase64 = function (e) {    
@@ -21,6 +22,27 @@ const imgFileToBase64 = function (e) {
   }
 }
 
+function previewFile() {
+  const preview = document.querySelector("img");
+  const file = document.querySelector("input[type=file]").files[0];
+  const reader = new FileReader();
+
+  reader.addEventListener(
+    "load",
+    function () {
+      // convert image file to base64 string
+
+      preview.src = reader.result;
+      base64 = reader.result.split(",")[1];
+    },
+    false
+  );
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}
+
 const getDataInputs = inputs => {
   let data = {};
   inputs.forEach(input => {
@@ -39,6 +61,69 @@ const getDataInputs = inputs => {
   // data.image is handled in put.js and post.js
   return data;
 }
+
+
+// From post to edit
+document.getElementById('uploadImage').addEventListener('click', ()=>{
+  document.querySelector("input[type=file").click()
+})
+
+countChecker = "";
+const txt = document.querySelectorAll(".editor-input");
+const nameChecker = (value) => {
+  document.getElementById(
+    "name-count"
+  ).innerHTML = `${value.length} on max 20 char.`;
+  if (value.length > 20) {
+    document.getElementById("name-count").style.color = "red";
+    countChecker = true;
+  } else {
+    document.getElementById("name-count").style.color = "white";
+    countChecker = false;
+  }
+};
+
+const shortchecker = (value) => {
+  document.getElementById(
+    "short-count"
+  ).innerHTML = `${value.length} on max 70 char.`;
+  if (value.length > 70) {
+    document.getElementById("short-count").style.color = "red";
+    countChecker = true;
+  } else {
+    document.getElementById("short-count").style.color = "white";
+    countChecker = false;
+  }
+};
+const descriptionChecker = (value) => {
+  document.getElementById(
+    "desc-count"
+  ).innerHTML = `${value.length} on max 350 char.`;
+  if (value.length > 350) {
+    document.getElementById("desc-count").style.color = "red";
+    countChecker = true;
+  } else {
+    document.getElementById("desc-count").style.color = "white";
+    countChecker = false;
+  }
+};
+
+txt.forEach((input) => {
+  input.addEventListener("input", (e) => {
+    switch (e.target.id) {
+      case "editor-character-name":
+        nameChecker(e.target.value);
+        break;
+      case "editor-character-short":
+        shortchecker(e.target.value);
+        break;
+      case "editor-character-description":
+        descriptionChecker(e.target.value);
+        break;
+    }
+  });
+});
+//
 
 // 
 let idUrl;
