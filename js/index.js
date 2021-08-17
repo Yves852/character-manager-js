@@ -110,5 +110,5 @@ const checkBarGet = ()=>{
 })();
 
 document.getElementById('addBtn').addEventListener("click", () => {
-  window.open('../html/edit.html', "_self")
+  window.open('./html/edit.html', "_self")
 })
