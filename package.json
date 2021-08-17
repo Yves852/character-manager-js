@@ -1,0 +1,23 @@
+{
+  "name": "character-manager-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "delete.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yves852/character-manager-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yves852/character-manager-js/issues"
+  },
+  "homepage": "https://github.com/Yves852/character-manager-js#readme",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}
