@@ -14,7 +14,7 @@
 <section class="editor">
     <form class="form">
         <img src="" height="200" alt="preview" class="preview">
-        <input type="file" onchange="previewFile()"><br>
+        <input type="file" id="editor-character-image" accept='image/*' onchange='imgFileToBase64(event)'><br>
     </form>
         <input type="text" class="editor-input" id="editor-character-name" placeholder="Cherry blossm">
         <input type="text" class="editor-input" id="editor-character-short" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit.">
