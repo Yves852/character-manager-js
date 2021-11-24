@@ -118,9 +118,10 @@ const checkBarGet = () => {
 
     // Empty bar at load
     searchBar.value = "";
+    searchBar.size = 30;
     // When release key on the search bar, make a research if none already launch within 500 ms
-    // researchRequestSemaphore control the access to the function, so it cannot be triggered more than
-    // one time every 500 ms and prevent API to die of requests
+    // researchRequestSemaphore control the access to the function,
+    // so it cannot be triggered more than one time every 500 ms and prevent API to die of requests
     searchBar.addEventListener("keyup", async () => {
         if (researchRequestSemaphore) {
             researchRequestSemaphore = false;
