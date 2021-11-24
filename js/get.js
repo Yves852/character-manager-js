@@ -24,6 +24,7 @@ const getCharacter = async (id, name) => {
         let characters = await result.json();
         return characters;
     } catch (error) {
+        // TODO replace console
         console.error(error);
     }
 };

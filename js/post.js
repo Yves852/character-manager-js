@@ -6,6 +6,7 @@ const preparePost = () => {
         const values = inputvalues.unshift(base64);
 
         if (inputvalues.some((value) => value === "")) {
+            // TODO replace console
             console.log(`you must fill all the forms!`);
             alert("you must fill all the forms!");
             return;
@@ -33,6 +34,7 @@ const preparePost = () => {
             );
             const newcharacter = await response.json;
 
+            // TODO replace console
             console.log(newcharacter);
             // TODO replace alert
             alert(
@@ -40,6 +42,7 @@ const preparePost = () => {
             );
             window.open("../index.html", "_self");
         } catch (error) {
+            // TODO replace console
             console.error(error);
         }
     });

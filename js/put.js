@@ -46,6 +46,7 @@ const preparePut = async (id) => {
             );
             window.open(`../index.html?id=${id}`, "_self");
         } catch (error) {
+            // TODO replace console
             console.error(error);
         }
     });
